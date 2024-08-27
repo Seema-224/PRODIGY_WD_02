@@ -1,0 +1,246 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* Body Styling */
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    width: 100%;
+    height: 100vh;
+    background-color: #120a1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Flex Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Watch Styling */
+.outer-circle {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animation-bg {
+    background: linear-gradient(-45deg, #ee7752, orange, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 7s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.inner-circle {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    /* background-color: black; */
+    background-color: #120a1e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    color: white;
+    font-size: 23px;
+}
+
+.minute {
+    font-size: 43px;
+}
+
+.sec {
+    font-size: 34px;
+}
+
+.msec {
+    font-size: 23px;
+}
+
+/* Button Styling */
+.button-wrapper {
+    width: 250px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: #120a1e;
+    color: white;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: white;
+    color: #120a1e;
+}
+
+/* Laps Styling */
+.laps {
+    list-style: none;
+    color: white;
+    width: 250px;
+    height: 250px;
+    overflow: auto;
+    position: relative;
+    margin-top: 30px;
+}
+
+.laps::-webkit-scrollbar {
+    display: none;
+}
+
+.lap-item {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #444;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+
+.number {
+    color: #cccccc;
+}
+
+.time-stamp {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+/* Clear Button Styling */
+.lap-clear-button {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    bottom: 35px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 130px;
+    padding: 10px 0;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid white;
+    cursor: pointer;
+}
+.lap-clear-button:hover {
+    background: #120a1e;
+    color: white;
+}
+
+/* Hidden Class */
+.hidden {
+    visibility: hidden;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .watch,
+    .laps {
+        margin-top: 0;
+    }
+    .watch{
+        margin-top: 70px;
+    }
+    .outer-circle {
+        width: 430px;
+        height: 430px;
+    }
+
+    .inner-circle {
+        width: 410px;
+        height: 410px;
+    }
+
+    .text {
+        font-size: 43px;
+    }
+
+    .minute {
+        font-size: 63px;
+    }
+
+    .sec {
+        font-size: 54px;
+    }
+
+    .msec {
+        font-size: 43px;
+    }
+
+    .button-wrapper {
+        width: 450px;
+        margin-top: 40px;
+    }
+
+    .button {
+        width: 70px;
+        height: 70px;
+        border: 3px solid white;
+        font-size: 16px;
+    }
+
+    .laps {
+        width: 450px;
+        height: 450px;
+        font-size: 20px;
+        margin-top: 0px;
+        padding-top: 0;
+    }
+
+    .lap-item {
+        padding: 15px;
+        border: 2px solid #444;
+    }
+
+    .lap-clear-button {
+        
+        bottom: 80px;
+        left: 69%;
+        width: 230px;
+        padding: 13px 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        border: 3px solid white;
+        font-size: 16px;
+    }
+}
